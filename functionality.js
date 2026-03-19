@@ -272,7 +272,11 @@ function pinValidation(id){
 
 function costMoney(id,message){
         const amount = document.getElementById(id);
-        const newAmount = Number(currentAmount.innerText) - Number(amount.value)
+        const newAmount = Number(currentAmount.innerText) - Number(amount.value);
+        if(newAmount < 0){
+            alert('Insufficient Balance');
+            return;
+        }
         currentAmount.innerText = newAmount;
         alert(message);
 }
